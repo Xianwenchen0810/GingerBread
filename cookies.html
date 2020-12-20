@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> 
+			Amy's Gingerbread House
+		</title>
+		<link rel="stylesheet" href="./css/index.css"></link>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">	
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="left_container animate-loop">
+					<!-- <div class="img_cup_container"> 
+						<img class="cup_img" id="img_1" onclick="showGB('one')" src="./img/Cup1.png" alt="Cup 1 img">
+					</div>
+					<div class="img_cup_container"> 
+						<img class="cup_img" id="img_2" onclick="showGB('two')" src="./img/Cup2.png" alt="Cup 2 img">
+					</div>
+					<div class="img_cup_container"> 
+						<img class="cup_img" id="img_3" onclick="showGB('three')" src="./img/Cup3.png" alt="Cup 3 img">
+					</div>
+					<div class="img_cup_container img_cup_container_last"> 
+						<img class="cup_img" id="img_4" onclick="showGB('four')" src="./img/Cup4.png" alt="Cup 4 img">
+					</div> -->
+			</div>
+			<div class="right_container">
+					<div class="intro">
+						<h1>Save us by spotting and clicking the cups!</h1><br>
+						
+					</div>
+					<a class="backtoHome" href="./index.html">🔙</a>
+					<div class="img_gb_container"> 
+						<img class="gb_img" id="gb_img1" src="./img/gb1.png" alt="Gingerbread 1 img">
+					</div>
+					<div class="img_gb_container"> 
+						<img class="gb_img" id="gb_img2" src="./img/gb2.png" alt="Gingerbread 2 img">
+					</div>
+					<div class="img_gb_container"> 
+						<img class="gb_img" id="gb_img3" src="./img/gb3.png" alt="Gingerbread 3 img">
+					</div>
+					<div class="img_gb_container"> 
+						<img class="gb_img" id="gb_img4" src="./img/gb4.png" alt="Gingerbread 4 img">
+					</div>
+			</div>
+		</div>
+	</body>
+
+	<script type="text/javascript">
+		window.onload = function() {
+			showCup()
+		}
+		function showCup(){	
+			console.log('123')
+			console.log(document.getElementsByClassName("left_container")[0])
+			const length = 5;
+			// var cupContent = "<div class='img_cup_container'><img class='cup_img' id='img_1' onclick='showGB('one')' src='./img/Cup1.png' alt='Cup 1 img'></div><div class='img_cup_container'><img class='cup_img' id='img_2' onclick='showGB('two')' src='./img/Cup2.png' alt='Cup 2 img'></div><div class='img_cup_container'><img class='cup_img' id='img_3' onclick='showGB('three')' src='./img/Cup3.png' alt='Cup 3 img'></div><div class='img_cup_container'><img class='cup_img' id='img_4' onclick='showGB('four')' src='./img/Cup4.png' alt='Cup 4 img'></div>"
+			var cupContent = `<div class="img_cup_container"><img class="cup_img" id="img_1" onclick="showGB('one')" src="./img/Cup1.png" alt="Cup 1 img"></div><div class="img_cup_container"><img class="cup_img" id="img_2" onclick="showGB('two')" src="./img/Cup2.png" alt="Cup 2 img"></div><div class="img_cup_container"><img class="cup_img" id="img_3" onclick="showGB('three')" src="./img/Cup3.png" alt="Cup 3 img"></div><div class="img_cup_container"><img class="cup_img" id="img_4" onclick="showGB('four')" src="./img/Cup4.png" alt="Cup 4 img"></div>`
+		  for( var i=0; i<length; i++ ) {
+				cupContent += cupContent
+			}
+			document.getElementsByClassName('left_container')[0].innerHTML = cupContent
+		}
+		function showGB (type) {
+			switch(type) {
+				case 'one':
+					document.getElementById('gb_img1').style.display = 'block';
+					document.getElementById('gb_img1').style.opacity = 1;
+					// replace other:
+					document.getElementsByClassName('intro')[0].style.display = 'none';
+					document.getElementById('gb_img2').style.display = 'none';
+					document.getElementById('gb_img2').style.opacity = 0;
+					document.getElementById('gb_img3').style.display = 'none';
+					document.getElementById('gb_img3').style.opacity = 0;
+					document.getElementById('gb_img4').style.display = 'none';
+					document.getElementById('gb_img4').style.opacity = 0;
+					break;
+				case 'two':
+					document.getElementById('gb_img2').style.display = 'block';
+					document.getElementById('gb_img2').style.opacity = 1;
+
+					// replace other:
+					document.getElementsByClassName('intro')[0].style.display = 'none';
+					document.getElementById('gb_img1').style.display = 'none';
+					document.getElementById('gb_img1').style.opacity = 0;
+					document.getElementById('gb_img3').style.display = 'none';
+					document.getElementById('gb_img3').style.opacity = 0;
+					document.getElementById('gb_img4').style.display = 'none';
+					document.getElementById('gb_img4').style.opacity = 0;
+					break;
+				case 'three':
+					document.getElementById('gb_img3').style.display = 'block';
+					document.getElementById('gb_img3').style.opacity = 1;
+					// replace other:
+					document.getElementsByClassName('intro')[0].style.display = 'none';
+					document.getElementById('gb_img1').style.display = 'none';
+					document.getElementById('gb_img1').style.opacity = 0;
+					document.getElementById('gb_img2').style.display = 'none';
+					document.getElementById('gb_img2').style.opacity = 0;
+					document.getElementById('gb_img4').style.display = 'none';
+					document.getElementById('gb_img4').style.opacity = 0;
+					break;
+				case 'four':
+					document.getElementById('gb_img4').style.display = 'block';
+					document.getElementById('gb_img4').style.opacity = 1;
+					// replace other:
+					document.getElementsByClassName('intro')[0].style.display = 'none';
+					document.getElementById('gb_img1').style.display = 'none';
+					document.getElementById('gb_img1').style.opacity = 0;
+					document.getElementById('gb_img3').style.display = 'none';
+					document.getElementById('gb_img3').style.opacity = 0;
+					document.getElementById('gb_img2').style.display = 'none';
+					document.getElementById('gb_img2').style.opacity = 0;
+					break;
+				default:
+					return
+				}
+		}
+	</script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> 
+			Amy's Gingerbread House
+		</title>
+		<link rel="stylesheet" href="./css/index.css"></link>
+		<link rel="preconnect" href="https://fonts.gstatic.com"></link>
+		<link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet"></link>
+	</head>
+	<body>
+		<div class="body_container">
+						<h1 class="title animate-bounce">Welcome to Gingerbread House!
+							Clicking on the door to enter the hosue when you are ready...</h1>
+						<p class="title_desc">This educational web tool is designed for new-to-gingerbread to learn some fundamental knowledge of gingerbread man playfully and interactively. 
+								By clicking the cartoon figures to explore the story of Gingerbread man. </p>
+						<img src="./img/snow_ball.png" class="snow_ball" alt="snow_ball">
+						<div class="img_container" onclick="openhouse()"><img  class="house" src="./img/Gingerbread_House.png" alt="house"></img></div>
+						<img  class="house open" src="./img/Open.png" alt="house_open"></img>
+						<!-- <img class="snow" src="./img/Trees.png" alt="snow"> -->
+						<img class="snow" src="./img/Snow.png" alt="snow">
+						<p class="annotation">The website is built by HTML5, CSS3 and JavaScript.</p>
+						<div class="about">
+							<span class="icon" onclick="aboutClick()">❓</span>
+						</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+        function jumpToCookie() {
+            window.location.jump('./cookies.html')
+        }
+				function openhouse() {
+					console.log('123')
+					document.getElementsByClassName('open')[0].style.opacity = 1;
+					document.getElementsByClassName('open')[0].style.zIndex = 2;
+
+					setTimeout(() => {
+						window.location.replace('./video.html')
+					},1500)
+				}
+				function aboutClick() {
+					if (document.getElementsByClassName('title_desc')[0].style.display === 'block') {
+						document.getElementsByClassName('title_desc')[0].style.display = 'none'
+						document.getElementsByTagName('body')[0].style.background = "#F4E6C1";
+						document.getElementsByClassName('title')[0].style.display = "block";
+					}else if(document.getElementsByClassName('title_desc')[0].style.display === 'none' || document.getElementsByClassName('title_desc')[0].style.display === '') {
+						document.getElementsByTagName('body')[0].style.background = "#000";
+						document.getElementsByClassName('title_desc')[0].style.display = "block";
+						document.getElementsByClassName('title')[0].style.display = "none";
+					}else{
+						console.log('close')
+					}
+				}
+	</script>
+</html>
