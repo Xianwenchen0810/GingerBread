@@ -19,6 +19,7 @@ body{
 .body_container .h1 p{
   color: #3f000f;
   font-size: 50px;
+}
 .body_container .snow_ball{
   position: absolute;
   width: 100%;
